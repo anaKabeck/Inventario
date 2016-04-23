@@ -1,0 +1,63 @@
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import javax.swing.JTextPane;
+import javax.swing.JTextField;
+
+public class Ventana1 extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField textMedicamento;
+	private JTextField textDescripcion;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Ventana1 frame = new Ventana1();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public Ventana1() {
+		setTitle("Inventario");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 300);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel lblMedicamento = new JLabel("Medicamento");
+		lblMedicamento.setBounds(50, 11, 78, 14);
+		contentPane.add(lblMedicamento);
+		
+		textMedicamento = new JTextField();
+		textMedicamento.setBounds(121, 8, 86, 20);
+		contentPane.add(textMedicamento);
+		textMedicamento.setColumns(10);
+		
+		JLabel lblDescripcin = new JLabel("Descripci\u00F3n");
+		lblDescripcin.setBounds(50, 50, 62, 14);
+		contentPane.add(lblDescripcin);
+		
+		textDescripcion = new JTextField();
+		textDescripcion.setBounds(121, 47, 86, 20);
+		contentPane.add(textDescripcion);
+		textDescripcion.setColumns(10);
+	}
+}
