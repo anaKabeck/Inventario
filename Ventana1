@@ -7,12 +7,19 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.JTextPane;
 import javax.swing.JTextField;
+import javax.swing.JMenuItem;
+import javax.swing.JRadioButtonMenuItem;
+import javax.swing.JMenuBar;
+import javax.swing.JMenu;
+import javax.swing.JSpinner;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
 
 public class Ventana1 extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textMedicamento;
-	private JTextField textDescripcion;
+	private JTextField textNombre;
+	private JTextField textSustanciaActiva;
 
 	/**
 	 * Launch the application.
@@ -37,27 +44,64 @@ public class Ventana1 extends JFrame {
 		setTitle("Inventario");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
+		
+		JMenuBar menuBar = new JMenuBar();
+		setJMenuBar(menuBar);
+		
+		JMenu mnArchivo = new JMenu("Archivo");
+		menuBar.add(mnArchivo);
+		
+		JRadioButtonMenuItem rdbtnmntmBuscar = new JRadioButtonMenuItem("Buscar");
+		mnArchivo.add(rdbtnmntmBuscar);
+		
+		JRadioButtonMenuItem rdbtnmntmAadir = new JRadioButtonMenuItem("A\u00F1adir");
+		mnArchivo.add(rdbtnmntmAadir);
+		
+		JRadioButtonMenuItem rdbtnmntmEliminar = new JRadioButtonMenuItem("Eliminar");
+		mnArchivo.add(rdbtnmntmEliminar);
+		
+		JRadioButtonMenuItem rdbtnmntmModificar = new JRadioButtonMenuItem("Modificar");
+		mnArchivo.add(rdbtnmntmModificar);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblMedicamento = new JLabel("Medicamento");
-		lblMedicamento.setBounds(50, 11, 78, 14);
+		JLabel lblMedicamento = new JLabel("Nombre");
+		lblMedicamento.setBounds(50, 11, 78, 17);
 		contentPane.add(lblMedicamento);
 		
-		textMedicamento = new JTextField();
-		textMedicamento.setBounds(121, 8, 86, 20);
-		contentPane.add(textMedicamento);
-		textMedicamento.setColumns(10);
+		textNombre = new JTextField();
+		textNombre.setBounds(178, 8, 86, 20);
+		contentPane.add(textNombre);
+		textNombre.setColumns(10);
 		
-		JLabel lblDescripcin = new JLabel("Descripci\u00F3n");
-		lblDescripcin.setBounds(50, 50, 62, 14);
-		contentPane.add(lblDescripcin);
+		JLabel lblSustanciaActiva = new JLabel("Sustancia Activa");
+		lblSustanciaActiva.setBounds(50, 39, 118, 19);
+		contentPane.add(lblSustanciaActiva);
 		
-		textDescripcion = new JTextField();
-		textDescripcion.setBounds(121, 47, 86, 20);
-		contentPane.add(textDescripcion);
-		textDescripcion.setColumns(10);
+		textSustanciaActiva = new JTextField();
+		textSustanciaActiva.setBounds(178, 39, 86, 20);
+		contentPane.add(textSustanciaActiva);
+		textSustanciaActiva.setColumns(10);
+		
+		JLabel lblControlado = new JLabel("Controlado");
+		lblControlado.setBounds(50, 114, 78, 14);
+		contentPane.add(lblControlado);
+		
+		JLabel lblCaducidad = new JLabel("Caducidad");
+		lblCaducidad.setBounds(50, 139, 78, 14);
+		contentPane.add(lblCaducidad);
+		
+		JLabel lblUnidadDeMedida = new JLabel("Unidad de Medida");
+		lblUnidadDeMedida.setBounds(50, 76, 100, 14);
+		contentPane.add(lblUnidadDeMedida);
+		
+		//String [] = { unidadStrings "Tabs", "Caps", "Suspensión"};
+		
+		JComboBox comboBox = new JComboBox();
+		comboBox.setToolTipText("");
+		comboBox.setBounds(178, 73, 86, 20);
+		contentPane.add(comboBox);
 	}
 }
