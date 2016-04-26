@@ -1,19 +1,4 @@
 import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.JLabel;
-import javax.swing.JTextPane;
-import javax.swing.JTextField;
-import javax.swing.JMenuItem;
-import javax.swing.JRadioButtonMenuItem;
-import javax.swing.JMenuBar;
-import javax.swing.JMenu;
-import javax.swing.JSpinner;
-import javax.swing.JButton;
-import javax.swing.JComboBox;
 
 public class Ventana1 extends JFrame {
 
@@ -74,7 +59,7 @@ public class Ventana1 extends JFrame {
 		contentPane.add(lblMedicamento);
 		
 		textNombre = new JTextField();
-		textNombre.setBounds(219, 9, 137, 20);
+		textNombre.setBounds(219, 9, 180, 20);
 		contentPane.add(textNombre);
 		textNombre.setColumns(10);
 		
@@ -83,7 +68,7 @@ public class Ventana1 extends JFrame {
 		contentPane.add(lblSustanciaActiva);
 		
 		textSustanciaActiva = new JTextField();
-		textSustanciaActiva.setBounds(219, 40, 137, 20);
+		textSustanciaActiva.setBounds(219, 40, 180, 20);
 		contentPane.add(textSustanciaActiva);
 		textSustanciaActiva.setColumns(10);
 		
@@ -99,11 +84,12 @@ public class Ventana1 extends JFrame {
 		lblUnidadDeMedida.setBounds(50, 125, 100, 17);
 		contentPane.add(lblUnidadDeMedida);
 		
-		String [] unidadStrings = {"Tabletas", "Cápsulas", "Suspensión"};
+		String [] unidadStrings = {"Tabletas", "Cápsulas", "Suspensión", "Aeorosoles","Cataplasma","Colirios",
+				"Colodiones", "Colutorios"};
 		
 		JComboBox comboBox = new JComboBox(unidadStrings);
 		comboBox.setToolTipText("");
-		comboBox.setBounds(219, 123, 86, 20);
+		comboBox.setBounds(219, 123, 114, 20);
 		contentPane.add(comboBox);
 		
 		String [] controladoStrings ={"Si", "No"};
@@ -126,16 +112,17 @@ public class Ventana1 extends JFrame {
 		contentPane.add(lblClasificacin);
 		
 		textCodigoBarras = new JTextField();
-		textCodigoBarras.setBounds(219, 67, 137, 20);
+		textCodigoBarras.setBounds(219, 67, 180, 20);
 		contentPane.add(textCodigoBarras);
 		textCodigoBarras.setColumns(10);
 		
 		String [] clasificacionStrings = {"Antibiótico", "Analgésico", "Antiparasitario",
-				"Antifimicos","Hipoglucemiantes","Antihipertensivos","Antipalúdicos",
-				"Planificación familiar","Vacunas","Material de Curación"};
+				"Antifimicos","Hipoglucemiantes","Antihipertensivos","Antipalúdicos","Antídotos","Anticonvulsivos",
+				"Antiinfecciosos","Antimigrañosos","Antiparkinsonianos","Cardiovasculares","Dermatólogicos",
+				"Desinfectantes y Antisépticos","Diuréticos","Vitaminas y Minerales","Planificación familiar","Vacunas","Material de Curación"};
 		
 		JComboBox comboBoxClasificacion = new JComboBox(clasificacionStrings);
-		comboBoxClasificacion.setBounds(219, 95, 137, 20);
+		comboBoxClasificacion.setBounds(219, 95, 180, 20);
 		contentPane.add(comboBoxClasificacion);
 		
 		JButton btnNewButton = new JButton("GUARDAR");
