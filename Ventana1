@@ -20,6 +20,8 @@ public class Ventana1 extends JFrame {
 	private JPanel contentPane;
 	private JTextField textNombre;
 	private JTextField textSustanciaActiva;
+	private JTextField textCaducidad;
+	private JTextField textCodigoBarras;
 
 	/**
 	 * Launch the application.
@@ -67,12 +69,12 @@ public class Ventana1 extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblMedicamento = new JLabel("Nombre");
-		lblMedicamento.setBounds(50, 11, 78, 17);
+		JLabel lblMedicamento = new JLabel("Nombre del medicamento");
+		lblMedicamento.setBounds(50, 11, 137, 17);
 		contentPane.add(lblMedicamento);
 		
 		textNombre = new JTextField();
-		textNombre.setBounds(178, 8, 86, 20);
+		textNombre.setBounds(219, 9, 137, 20);
 		contentPane.add(textNombre);
 		textNombre.setColumns(10);
 		
@@ -81,27 +83,63 @@ public class Ventana1 extends JFrame {
 		contentPane.add(lblSustanciaActiva);
 		
 		textSustanciaActiva = new JTextField();
-		textSustanciaActiva.setBounds(178, 39, 86, 20);
+		textSustanciaActiva.setBounds(219, 40, 137, 20);
 		contentPane.add(textSustanciaActiva);
 		textSustanciaActiva.setColumns(10);
 		
 		JLabel lblControlado = new JLabel("Controlado");
-		lblControlado.setBounds(50, 114, 78, 14);
+		lblControlado.setBounds(50, 153, 78, 17);
 		contentPane.add(lblControlado);
 		
 		JLabel lblCaducidad = new JLabel("Caducidad");
-		lblCaducidad.setBounds(50, 139, 78, 14);
+		lblCaducidad.setBounds(50, 181, 78, 17);
 		contentPane.add(lblCaducidad);
 		
 		JLabel lblUnidadDeMedida = new JLabel("Unidad de Medida");
-		lblUnidadDeMedida.setBounds(50, 76, 100, 14);
+		lblUnidadDeMedida.setBounds(50, 125, 100, 17);
 		contentPane.add(lblUnidadDeMedida);
 		
-		//String [] = { unidadStrings "Tabs", "Caps", "Suspensión"};
+		String [] unidadStrings = {"Tabletas", "Cápsulas", "Suspensión"};
 		
-		JComboBox comboBox = new JComboBox();
+		JComboBox comboBox = new JComboBox(unidadStrings);
 		comboBox.setToolTipText("");
-		comboBox.setBounds(178, 73, 86, 20);
+		comboBox.setBounds(219, 123, 86, 20);
 		contentPane.add(comboBox);
+		
+		String [] controladoStrings ={"Si", "No"};
+		
+		JComboBox comboBoxControlado = new JComboBox(controladoStrings);
+		comboBoxControlado.setBounds(219, 153, 53, 20);
+		contentPane.add(comboBoxControlado);
+		
+		textCaducidad = new JTextField();
+		textCaducidad.setBounds(219, 178, 137, 20);
+		contentPane.add(textCaducidad);
+		textCaducidad.setColumns(10);
+		
+		JLabel lblCodigoDeBarras = new JLabel("Codigo de barras");
+		lblCodigoDeBarras.setBounds(50, 69, 118, 17);
+		contentPane.add(lblCodigoDeBarras);
+		
+		JLabel lblClasificacin = new JLabel("Clasificaci\u00F3n");
+		lblClasificacin.setBounds(50, 97, 118, 17);
+		contentPane.add(lblClasificacin);
+		
+		textCodigoBarras = new JTextField();
+		textCodigoBarras.setBounds(219, 67, 137, 20);
+		contentPane.add(textCodigoBarras);
+		textCodigoBarras.setColumns(10);
+		
+		String [] clasificacionStrings = {"Antibiótico", "Analgésico", "Antiparasitario",
+				"Antifimicos","Hipoglucemiantes","Antihipertensivos","Antipalúdicos",
+				"Planificación familiar","Vacunas","Material de Curación"};
+		
+		JComboBox comboBoxClasificacion = new JComboBox(clasificacionStrings);
+		comboBoxClasificacion.setBounds(219, 95, 137, 20);
+		contentPane.add(comboBoxClasificacion);
+		
+		JButton btnNewButton = new JButton("GUARDAR");
+		btnNewButton.setBounds(158, 206, 114, 23);
+		contentPane.add(btnNewButton);
 	}
 }
